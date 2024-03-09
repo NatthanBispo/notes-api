@@ -1,4 +1,4 @@
-Given('com {int} nota\(s) cadastrada') do |int|
+Given('com {int} nota\(s) cadastrada\(s)') do |int|
   FactoryBot.create_list(:note, int, user: @user)
 end
 

@@ -2,6 +2,10 @@ class Api::V1::Users::NotesController < Api::ApiController
   before_action :authenticate_user_from_token!
   before_action :fetch_note, only: [:update]
 
+  def index
+    render_success(current_user.notes)
+  end
+
   def create
     note = current_user.notes.new(note_params)
 
