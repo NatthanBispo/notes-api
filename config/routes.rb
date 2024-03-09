@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
       scope module: :users do
         resources :users do
-          resources :notes, only: [:create]
+          resources :notes, only: [:create, :update]
         end
       end
     end

@@ -1,6 +1,10 @@
 module ApiCommonResponses
   extend ActiveSupport::Concern
 
+  def render_success(data = {})
+    render json: data, status: :ok
+  end
+
   def render_created(data = {})
     render json: data, status: :created
   end
@@ -11,5 +15,9 @@ module ApiCommonResponses
 
   def render_unauthorized(data = {})
     render json: data, status: :unauthorized
+  end
+
+  def render_not_found
+    head :not_found
   end
 end
