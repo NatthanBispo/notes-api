@@ -9,11 +9,11 @@ Given('os dados necessarios para editar essa nota') do
   }
 end
 
-Given('a nota a ser editada') do
+Given('a nota a ser modificada') do
   @note = @user.notes.first
 end
 
-Given('a nota de outro usuario a ser editada') do
+Given('a nota de outro usuario a ser modificada') do
   another_user = User.where.not(id: @user.id).first
 
   @note = another_user.notes.first

@@ -1,6 +1,6 @@
 class Api::V1::Users::NotesController < Api::ApiController
   before_action :authenticate_user_from_token!
-  before_action :fetch_note, only: [:update]
+  before_action :fetch_note, only: [:update, :destroy]
 
   def index
     render_success(current_user.notes)
@@ -18,6 +18,10 @@ class Api::V1::Users::NotesController < Api::ApiController
     return render_success(@note) if @note.update(note_params)
 
     render_unprocessable_entity(@note.errors.full_messages)
+  end
+
+  def destroy
+    @note.destroy
   end
 
   private
