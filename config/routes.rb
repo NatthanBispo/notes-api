@@ -8,6 +8,12 @@ Rails.application.routes.draw do
           post :sign_in, controller: :sessions, action: :create
         end
       end
+
+      scope module: :users do
+        resources :users do
+          resources :notes, only: [:create]
+        end
+      end
     end
   end
 end
