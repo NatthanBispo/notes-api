@@ -5,6 +5,8 @@
 - Ruby v3.2.3
 - Rails v7.1.3.2
 - MySQL v8.3.0
+- Postman (https://documenter.getpostman.com/view/8120581/2sA2xh4De8)
+
 
 ## Setup do Projeto
 
