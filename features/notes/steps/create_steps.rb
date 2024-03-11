@@ -7,10 +7,10 @@ When('ele solicita a criação da nova nota') do
 end
 
 Then('a nota deve ter sido criada e adicionada na listagem de notas do usuario') do
+  expect(@test_client.success?).to be true
   expect(@user.notes.count).to be 1
   expect(@user.notes.last.title).to eq @note_params[:title]
   expect(@user.notes.last.content).to eq @note_params[:content]
-  expect(@test_client.success?).to be true
 end
 
 Given('os dados invalidos para cirar uma nova nota') do

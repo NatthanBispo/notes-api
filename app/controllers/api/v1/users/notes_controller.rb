@@ -21,7 +21,9 @@ class Api::V1::Users::NotesController < Api::ApiController
   end
 
   def destroy
-    @note.destroy
+    return render_success(@note) if @note.destroy
+
+    render_unprocessable_entity(@note.errors.full_messages)
   end
 
   private
