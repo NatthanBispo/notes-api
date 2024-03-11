@@ -8,6 +8,8 @@ gem 'rails', '~> 7.1', '>= 7.1.3.2'
 gem 'mysql2', '~> 0.5.6'
 # Use Puma as the app server
 gem 'puma', '~> 6.4', '>= 6.4.2'
+gem 'devise', '~> 4.9', '>= 4.9.3'
+gem 'active_model_serializers', '~> 0.10.14'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
@@ -27,6 +29,12 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  gem 'faker', '~> 3.2', '>= 3.2.3'
+  gem 'rack-cors', '~> 2.0', '>= 2.0.2'
+  gem 'rspec-rails', '~> 6.1', '>= 6.1.1'
+  gem 'factory_bot_rails', '~> 6.4', '>= 6.4.3'
 end
 
 group :development do
